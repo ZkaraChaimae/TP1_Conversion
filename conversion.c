@@ -8,10 +8,11 @@ char lecture()
     return c;
 }
 
-float conversion()
+double conversion()
 {
-    float resultat=0.0,v=0.0;
+    double resultat=0.0,v=0.0;
     char signe,c,rep;
+    int j=1;
 
     printf("Entrer le signe du reel : ");
     scanf("%c",&signe);getchar();
@@ -26,7 +27,6 @@ float conversion()
 
     while(rep=='O' || rep=='o')
     {
-        int j=1;
         scanf("%c",&c);getchar();
         if(c == '.')
         {
@@ -34,7 +34,7 @@ float conversion()
             continue;
         }
         if(j < 0)  {
-            v+=(c-'0')*pow(10,j);
+            v+=(double)(c-'0')*(double)pow(10,j);
             j--;
         }
         else if(j > 0)
@@ -52,7 +52,7 @@ float conversion()
 
 int main()
 {
-    float a;
+    double a;
     a=conversion();
     printf("\na = %f\n",a);
     return 0;
